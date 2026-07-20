@@ -70,6 +70,10 @@ begin
 end
 endfunction
 
+// The inherited core no longer uses the discrete sprite RAM select path.
+// Keep it explicitly inactive instead of letting Quartus infer GND.
+assign sprite_ram_cs = 1'b0;
+
 always @(*) begin
 
     if (pcb == pcb_zero_wing || pcb == pcb_hellfire) begin

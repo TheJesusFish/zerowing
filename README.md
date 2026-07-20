@@ -24,10 +24,12 @@ Rally Bike (TP-012), Demon's World (TP-016), Fireshark (TP-017), and Vimana (TP-
 |---------------------------------------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------|
 | [**fx68k**](https://github.com/ijor/fx68k)                                            | [**Motorola 68000 CPU**](https://en.wikipedia.org/wiki/Motorola_68000) | Jorge Cwik                                     |
 | [**t80**](https://opencores.org/projects/t80)                                         | [**Zilog Z80 CPU**](https://en.wikipedia.org/wiki/Zilog_Z80)           | Daniel Wallner                                 |
-| [**opl2_fpga**](https://github.com/gtaylormb/opl2_fpga_MiSTer)                        | [**Yamaha OPL2**](https://en.wikipedia.org/wiki/Yamaha_OPL#OPL2)       | Greg Taylor                                    |
+| [**opl2_fpga_MiSTer**](https://github.com/gtaylormb/opl2_fpga_MiSTer)                  | MiSTer-targeted [**Yamaha YM3812 / OPL2**](https://en.wikipedia.org/wiki/Yamaha_OPL#OPL2) FPGA audio core | Greg Taylor                                    |
 | [**yc_out**](https://github.com/MikeS11/MiSTerFPGA_YC_Encoder)                        | [**Y/C Video Module**](https://en.wikipedia.org/wiki/S-Video)          | Mike Simone                                    |
 | [**mem**](https://github.com/MiSTer-devel/Arcade-Rygar_MiSTer/tree/master/src/mem)    | SDRAM Controller / Rom Downloader                                      | Josh Bassett; modified by Erin Olafson       |
 | [**core_template**](https://github.com/MiSTer-devel/Template_MiSTer)                  | MiSTer Framework Template                                              | sorgelig; modified by Erin Olafson / atrac17 |
+
+This core uses Greg Taylor's `opl2_fpga_MiSTer` module for YM3812 / OPL2 audio. The upstream project describes it as a MiSTer-targeted port of `opl2_fpga`, derived from `opl3_fpga`, with parameters and top-level ports set up for easy drop-in use on MiSTer cores.
 
 # PCB Check List
 
@@ -169,4 +171,3 @@ Special thanks to the following loaned hardware used during development of this 
 [**@owlnonymous**](https://twitter.com/owlnonymous) for loaning OutZone (TP-015 Conversion) <br>
 [**@cathoderaze**](https://twitter.com/cathoderaze) for loaning Tatsujin (TP-013B) <br>
 [**@90s_cyber_thriller**](https://www.instagram.com/90s_cyber_thriller/) for loaning Outzone (TP-018) <br>
-

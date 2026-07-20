@@ -96,7 +96,7 @@ reg [22:0] sound_rom_1_ctrl_addr;
 
 // download wires
 reg [22:0] download_addr;
-reg [32:0] download_data;
+reg [31:0] download_data;
 reg download_req;
 
 // control wires
@@ -219,16 +219,13 @@ always @ (posedge clk, posedge reset) begin
             pending_rom <= rom;
         end
 
-        sdram_valid_reg <= sdram_valid;
     end
 end
 
-reg sdram_valid_reg;
-
 // select cpu data input based on what is active
-assign prog_rom_data_valid    = prog_rom_cs   &  ( prog_rom_ctrl_hit    | (pending_rom == PROG_ROM    ?  sdram_valid  : 0) ) & ~reset;
-assign tile_rom_data_valid    = tile_rom_cs   &  ( tile_rom_ctrl_hit    | (pending_rom == TILE_ROM    ?  sdram_valid  : 0) ) & ~reset;
-assign sprite_rom_data_valid  = sprite_rom_cs &  ( sprite_rom_ctrl_hit  | (pending_rom == SPRITE_ROM  ?  sdram_valid  : 0) ) & ~reset;
+assign prog_rom_data_valid    = prog_rom_cs   &  ( prog_rom_ctrl_hit    | (pending_rom == PROG_ROM    ?  sdram_valid  : 1'b0) ) & ~reset;
+assign tile_rom_data_valid    = tile_rom_cs   &  ( tile_rom_ctrl_hit    | (pending_rom == TILE_ROM    ?  sdram_valid  : 1'b0) ) & ~reset;
+assign sprite_rom_data_valid  = sprite_rom_cs &  ( sprite_rom_ctrl_hit  | (pending_rom == SPRITE_ROM  ?  sdram_valid  : 1'b0) ) & ~reset;
 //assign sound_rom_1_data_valid = sound_rom_1_cs & ( sound_rom_1_ctrl_hit | (pending_rom == SOUND_ROM_1 ?  sdram_valid  : 0) ) & ~reset;
 
 always @ (*) begin
