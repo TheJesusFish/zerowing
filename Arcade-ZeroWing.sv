@@ -21,7 +21,7 @@
 module emu
 (
 	`include "sys/emu_ports.vh"
-);m
+);
 
 ///////// Default values for ports not used in this core /////////
 
